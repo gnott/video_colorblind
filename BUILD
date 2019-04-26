@@ -4,7 +4,6 @@ cc_binary (
   name = "video_colorblind",
   srcs = glob(["*.cpp"], exclude=["*_test.cpp", "_test.hpp"]),
   copts = ["-g"],
-  linkopts = ["-lprofiler"],
   deps = [
     "@boost//:boost",
     "@opencv//:opencv",

@@ -64,7 +64,7 @@ QuadraticPolynomial lagrangeInterpolateXyy(
  * be used to estimate all colors that protanopes can see.
  */
 QuadraticPolynomial xyyVisionCurve = lagrangeInterpolateXyy(
-  XYY_470, XYY_575, XYY_WHITE_D50);
+  video_colorblind::color::XYY_470, video_colorblind::color::XYY_575, video_colorblind::color::XYY_WHITE_D50);
 
 
 /** Represents a line. */
@@ -127,9 +127,9 @@ Xyy intersectCurveLineXyy(
 Xyy moveWithinRgb(const Line &line, const Xyy &xyy) {
   // Two cases for protanopes: line intersects Blue->Green, line intersects
   // Red->Green.
-  Line primaryLine = xyy.x < XYY_GREEN_PRIMARY.x ?
-        xyyLine(XYY_BLUE_PRIMARY, XYY_GREEN_PRIMARY) :
-        xyyLine(XYY_GREEN_PRIMARY, XYY_RED_PRIMARY);
+  Line primaryLine = xyy.x < video_colorblind::color::XYY_GREEN_PRIMARY.x ?
+        xyyLine(video_colorblind::color::XYY_BLUE_PRIMARY, video_colorblind::color::XYY_GREEN_PRIMARY) :
+        xyyLine(video_colorblind::color::XYY_GREEN_PRIMARY, video_colorblind::color::XYY_RED_PRIMARY);
 
   double y = primaryLine.m * xyy.x + primaryLine.b;
   if (xyy.y > y) {

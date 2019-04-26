@@ -7,7 +7,7 @@
 
 #ifndef __VIDEO_COLORBLIND_COLOR_PROTO_HPP__
 #define __VIDEO_COLORBLIND_COLOR_PROTO_HPP__
-
+#include "color.hpp"
 namespace video_colorblind { namespace color {
 
 // getProtoColor takes an RGB color, and calculates an estimate for the color as
